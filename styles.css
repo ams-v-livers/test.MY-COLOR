@@ -1,120 +1,61 @@
 
 /* ========================================
-   MY:COLOR 回転ロゴ
+   STATEMENT 背景画像
 ======================================== */
 
-.hero-rotator {
-  position: absolute;
-  z-index: 3;
-  right: 4%;
-  bottom: 88px;
-
-  width: 175px;
-  height: 175px;
-
-  display: grid;
-  place-items: center;
+.statement {
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+  background: #17121f;
 }
 
-/* 回転する円形テキスト */
+/* PC背景 */
 
-.rotator-svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-
-  overflow: visible;
-  animation: spin 14s linear infinite;
-}
-
-.rotator-core {
-  fill: rgba(255, 255, 255, 0.04);
-  stroke: rgba(255, 255, 255, 0.22);
-  stroke-width: 1.2;
-}
-
-.rotator-text {
-  fill: #ffffff;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-}
-
-/* 中央のロゴ */
-
-.rotator-center {
+.statement-photo {
   position: absolute;
   inset: 0;
 
-  display: grid;
-  place-items: center;
+  background-image: url("assets/statement-pc.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 
-  pointer-events: none;
+  opacity: 1;
 }
 
-.rotator-center img {
-  width: 78px;
-  height: 78px;
+/* 文字を見やすくする暗めのグラデーション */
 
-  object-fit: contain;
+.statement-overlay {
+  position: absolute;
+  inset: 0;
 
-  background: rgba(245, 239, 255, 0.94);
-  border-radius: 50%;
-
-  padding: 5px;
-
-  box-shadow:
-    0 0 25px rgba(192, 161, 255, 0.25);
+  background: linear-gradient(
+    90deg,
+    rgba(12, 9, 20, 0.80) 0%,
+    rgba(15, 10, 25, 0.52) 45%,
+    rgba(15, 10, 25, 0.10) 100%
+  );
 }
 
-/* 円だけを回転させる */
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* タブレット */
-
-@media (max-width: 980px) {
-  .hero-rotator {
-    width: 145px;
-    height: 145px;
-  }
-
-  .rotator-center img {
-    width: 65px;
-    height: 65px;
-  }
-}
-
-/* スマートフォン */
+/* スマホ */
 
 @media (max-width: 760px) {
-  .hero-rotator {
-    width: 112px;
-    height: 112px;
 
-    right: 5%;
-    bottom: 56px;
+  .statement {
+    min-height: 420px;
   }
 
-  .rotator-center img {
-    width: 50px;
-    height: 50px;
-    padding: 3px;
+  .statement-photo {
+    background-image: url("assets/statement-mobile.webp");
+    background-position: center center;
   }
-}
 
-/* アニメーション軽減設定 */
-
-@media (prefers-reduced-motion: reduce) {
-  .rotator-svg {
-    animation: none;
+  .statement-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(12, 9, 20, 0.75),
+      rgba(15, 10, 25, 0.45)
+    );
   }
 }
