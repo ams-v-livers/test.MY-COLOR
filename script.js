@@ -3,7 +3,7 @@
 // MY:COLOR / SCRIPT
 // =======================================
 
-// スマホメニュー
+// スマホ
 
 const menuButton = document.querySelector('#menuButton');
 const nav = document.querySelector('#nav');
@@ -95,7 +95,7 @@ if ('IntersectionObserver' in window) {
 }
 
 // =======================================
-// 応募URL未設定時の案内
+// 応募URL 未設定の際の表示
 // =======================================
 
 const applyButton = document.querySelector('#applyButton');
